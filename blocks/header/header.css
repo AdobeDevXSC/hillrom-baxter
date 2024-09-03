@@ -184,6 +184,10 @@ header nav#nav .nav-sections ul > li a {
 	color: #54585a;
 }
 
+header nav#nav .nav-sections ul > li a:hover {
+	color: #154898;
+}
+
 @media (width >= 900px) {
 	header nav#nav .nav-sections {
 		display: block;
