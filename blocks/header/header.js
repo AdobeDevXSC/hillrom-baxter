@@ -209,6 +209,23 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+
+
+  // Custom top nav
+  const topNav = document.createElement('div');
+  topNav.classList.add('top-nav');
+
+  const sections = navWrapper.querySelectorAll('nav .section');
+  const lastTwoSections = Array.from(sections).slice(-2);
+
+  lastTwoSections.forEach(section => {
+    section.classList.remove('section');
+    const br = section.querySelector('br');
+    if (br) br.remove();
+    topNav.appendChild(section);
+  });
+
+  block.prepend(topNav);
   block.append(navWrapper);
 
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
