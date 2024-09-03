@@ -1,7 +1,16 @@
 footer {
-  padding: 2rem;
-  background-color: var(--light-color);
+  padding: 2.5rem 4rem;
+  background-color: #54585a;
   font-size: var(--body-font-size-s);
+  color: #fff;
+}
+
+footer .section {
+  padding: 15px 0;
+}
+
+footer .section:first-of-type { 
+  border-bottom: 1px solid #fff;
 }
 
 footer .footer {
@@ -11,4 +20,93 @@ footer .footer {
 
 footer .footer p {
   margin: 0;
+}
+
+footer .footer .default-content-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .default-content-wrapper > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+footer .footer .default-content-wrapper > ul > li {
+  max-width: 220px;
+  font-weight: bold;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  line-height: 1.5rem;
+}
+
+footer .footer .default-content-wrapper > ul > li > ul {
+  margin-top: 1rem;
+}
+
+footer .footer .default-content-wrapper > ul > li > ul > li {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: .5em;
+}
+
+footer .footer .default-content-wrapper > ul > li > ul > li a {
+  color: #fff;
+}
+
+footer .footer .default-content-wrapper > ul > li:last-of-type {
+  max-width: 100%;
+}
+
+footer .footer .default-content-wrapper > ul > li:last-of-type > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+footer .footer .default-content-wrapper > ul > li:last-of-type > ul > li span.icon {
+  height: 32px;
+  width: auto;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper p a {
+  color: #fff;
+  border-left: 1px solid #ccc;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper p a:last-of-type {
+  border-right: 1px solid #ccc;
+}
+
+footer .footer .section:last-of-type .default-content-wrapper p:last-of-type {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  font-size: 16px;
+}
+
+@media (width <= 768px) {
+  footer {
+    padding: 1rem 1.5rem;
+	}
+
+  footer .footer .default-content-wrapper > ul {
+    gap: 3rem;
+  }
+
+  footer .footer .section:last-of-type .default-content-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

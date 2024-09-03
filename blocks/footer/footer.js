@@ -16,5 +16,11 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Select all <a> elements within the footer
+  const footerLinks = footer.querySelectorAll('a');
+  footerLinks.forEach(link => {
+    link.setAttribute('target', '_blank');
+  });
+
   block.append(footer);
 }
