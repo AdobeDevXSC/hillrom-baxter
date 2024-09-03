@@ -2,7 +2,7 @@
 
 
 ## Environments
-- Preview: Preview: https://main--hillrom-baxter--adobedevxsc.hlx.page/
+- Preview: https://main--hillrom-baxter--adobedevxsc.hlx.page/
 - Live: https://main--hillrom-baxter--adobedevxsc.hlx.live/
 
 ## Installation
