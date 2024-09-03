@@ -20,7 +20,7 @@ header nav#nav {
 }
 
 header nav#nav[aria-expanded="true"] {
-	grid-template:"hamburger brand" var(--nav-height)"sections sections" 1fr"tools tools" var(--nav-height) / auto 1fr;
+	/* grid-template:"hamburger brand" var(--nav-height)"sections sections" 1fr"tools tools" var(--nav-height) / auto 1fr; */
 	overflow-y: auto;
 	min-height: 100vh;
 }
@@ -392,6 +392,13 @@ header .top-nav > div:first-of-type .default-content-wrapper a {
 	display: block;
 	font-weight: normal;
 	text-decoration: underline;
+	border: none;
+	color: #fff;
+	border-radius: 0;
+}
+
+header .top-nav > div:first-of-type .default-content-wrapper a::after {
+	display: none;
 }
 
 header .top-nav > div:last-of-type .default-content-wrapper {
