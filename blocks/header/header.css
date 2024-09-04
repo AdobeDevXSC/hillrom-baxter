@@ -362,16 +362,10 @@ header .breadcrumbs ol li:last-of-type {
 header .top-nav > div {
 	max-width: 1680px;
 	margin: 0 auto;
-	padding: 0 16px;
 }
 
 header .top-nav p {
 	margin: 0;
-}
-
-header .top-nav > div:first-of-type {
-	color: #fff;
-	background: rgb(21, 72, 152);
 }
 
 header .top-nav > div:first-of-type .default-content-wrapper {
@@ -380,8 +374,11 @@ header .top-nav > div:first-of-type .default-content-wrapper {
 	justify-content: center;
 	align-items: center;
 	font-size: 16px;
-	padding: 5px 0;
+	padding: 5px;
 	gap: 10vw;
+	background: rgb(21, 72, 152);
+	color: #fff;
+	text-align: center;
 }
 
 header .top-nav > div:first-of-type .default-content-wrapper a {
@@ -432,12 +429,6 @@ header .top-nav > div:last-of-type .default-content-wrapper ul li a {
 	padding: 0 15px;
 	margin: 0 5px;
 	font-weight: 500;
-}
-
-@media screen and (width >= 900px) {
-	header .top-nav > div {
-		padding: 0 32px;
-	}
 }
 
 @media screen and (width <= 768px) {
