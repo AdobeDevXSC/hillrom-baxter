@@ -221,8 +221,11 @@ main .section {
 }
 
 /* section metadata */
-main .section.light,
 main .section.highlight {
+  background-color: #e8edf5;
+}
+
+main .section.gray-highlight {
   background-color: var(--light-color);
 }
 
