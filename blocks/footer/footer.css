@@ -3,6 +3,9 @@ footer {
   background-color: #54585a;
   font-size: var(--body-font-size-s);
   color: #fff;
+  max-width: 1680px;
+  margin: auto;
+  box-sizing: border-box;
 }
 
 footer .section {
@@ -11,11 +14,6 @@ footer .section {
 
 footer .section:first-of-type { 
   border-bottom: 1px solid #fff;
-}
-
-footer .footer {
-  max-width: 1680px;
-  margin: auto;
 }
 
 footer .footer p {
@@ -109,5 +107,14 @@ footer .footer .section:last-of-type .default-content-wrapper p:last-of-type {
   footer .footer .section:last-of-type .default-content-wrapper {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  footer .footer .section:last-of-type .default-content-wrapper p a {
+    border-left: none;
+    padding: 5px 20px 5px 0;
+  }
+  
+  footer .footer .section:last-of-type .default-content-wrapper p a:last-of-type {
+    border-right:  none;
   }
 }
