@@ -104,6 +104,7 @@ let carouselId = 0;
 export default async function decorate(block) {
   carouselId += 1;
   const isJSONCarousel = block.classList.contains('cards');
+  const isDots = block.classList.contains('dots');
 
   block.setAttribute('id', `carousel-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
@@ -136,7 +137,11 @@ export default async function decorate(block) {
       <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
     `;
 
-    container.append(slideNavButtons);
+    if (isDots) {
+      slideIndicatorsNav.prepend(slideNavButtons);
+    } else {
+      container.append(slideNavButtons);
+    }
   }
 
   const isImageCards = block.classList.contains('image-cards');

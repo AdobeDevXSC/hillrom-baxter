@@ -233,6 +233,10 @@ main .section.gray-highlight {
   background-color: var(--light-color);
 }
 
+main .section.highlight.carousel-container .default-content-wrapper {
+  text-align: center;
+}
+
 main .section.text-center {
   text-align: center;
 }
