@@ -109,11 +109,16 @@
 
 
 /* article */
-.cards.article > ul > a > li {
+
+.cards.article > ul > li  {
+  border: none;
+}
+
+.cards.article > ul > li > a  {
   position: relative;
-  border: 1px solid #dadada;
   background-color: var(--background-color);
   aspect-ratio: 1;
+  display: block;
 }
 
 .cards.article .cards-card-body {
@@ -177,6 +182,7 @@
 .cards.article > ul > li img {
   width: 100%;
   object-fit: cover;
+  aspect-ratio: unset;
 }
 
 @media (width >= 1024px) {
