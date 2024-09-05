@@ -204,12 +204,12 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 16px;
 }
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 1.5rem 4rem;
   }
 }
 

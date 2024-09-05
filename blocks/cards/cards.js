@@ -4,6 +4,8 @@ export default async function decorate(block) {
   const isJSON = block.classList.contains('is-json');
   const link = block.querySelector('a'); 
 
+  console.log("link: ", link);
+
   async function fetchJson(link) {
     const response = await fetch(link?.href);
 
@@ -23,6 +25,7 @@ export default async function decorate(block) {
 		const li = document.createElement('li');
 		while (row.firstElementChild) li.append(row.firstElementChild);
 		[...li.children].forEach((div) => {
+      console.log("Div: ", div)
 
 		if (div.children.length === 1 && div.querySelector('picture')) {
 			div.className = 'cards-card-image';
@@ -32,6 +35,12 @@ export default async function decorate(block) {
 			div.className = 'cards-card-body';
 		}
 		});
+
+    const anchorLink = li.querySelector('a');
+    if (anchorLink) {
+      anchor.href = anchorLink.href;
+      anchor.setAttribute('target', '_blank');
+    }
 		anchor.append(li);
 		ul.append(anchor);
 	});
