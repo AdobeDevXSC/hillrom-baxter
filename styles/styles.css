@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
+  --link-color: #3f54cc;
   --link-hover-color: #136ff6;
   --background-color: white;
   --light-color: #eee;
@@ -210,6 +210,10 @@ main .section {
   padding: 16px;
 }
 
+main .section:last-of-type {
+  margin-top: 2rem;
+}
+
 @media (width >= 600px) {
   main .section {
     padding: 1.5rem 4rem;
@@ -239,6 +243,10 @@ main .section.highlight.carousel-container .default-content-wrapper {
 
 main .section.text-center {
   text-align: center;
+}
+
+main .section.margin-top {
+  margin-top: 4rem;
 }
 
 main .section.cta-links {
