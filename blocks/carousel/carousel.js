@@ -71,7 +71,7 @@ function bindEvents(block) {
   
 }
 
-function createSlide(row, slideIndex, carouselId) {
+function createSlide(row, slideIndex, carouselId, isMultiSlides) {
   const slide = document.createElement('li');
   slide.dataset.slideIndex = slideIndex;
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
@@ -85,6 +85,21 @@ function createSlide(row, slideIndex, carouselId) {
   const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
   if (labeledBy) {
     slide.setAttribute('aria-labelledby', labeledBy.getAttribute('id'));
+  }
+
+  if (isMultiSlides) {
+    const aTag = slide.querySelector('a');
+    const href = aTag?.href; 
+    const a = document.createElement('a');
+    a.href = href;
+    a.setAttribute('target', '_blank');
+
+    while (slide.firstChild) {
+      a.appendChild(slide.firstChild);
+    }
+
+    aTag.parentElement.remove();
+    slide.appendChild(a);
   }
 
   return slide;
@@ -105,6 +120,7 @@ export default async function decorate(block) {
   carouselId += 1;
   const isJSONCarousel = block.classList.contains('cards');
   const isDots = block.classList.contains('dots');
+  const isMultiSlides = block.classList.contains('multi-slides');
 
   block.setAttribute('id', `carousel-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
@@ -139,6 +155,10 @@ export default async function decorate(block) {
 
     if (isDots) {
       slideIndicatorsNav.prepend(slideNavButtons);
+    } else if (isMultiSlides) {
+      slideIndicatorsNav.prepend(slideNavButtons);
+      const clonedSlideNavButtons = slideNavButtons.cloneNode(true);
+      container.append(clonedSlideNavButtons);
     } else {
       container.append(slideNavButtons);
     }
@@ -205,7 +225,7 @@ export default async function decorate(block) {
 	})
   } else {
 	rows.forEach((row, idx) => {
-		const slide = createSlide(row, idx, carouselId);
+		const slide = createSlide(row, idx, carouselId, isMultiSlides);
 		slidesWrapper.append(slide);
 
 		if (slideIndicators) {

@@ -91,7 +91,7 @@ h1 { font-size: var(--heading-font-size-xxl) }
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
+h5 { font-size: var(--heading-font-size-s); font-weight: 500; }
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
@@ -152,7 +152,7 @@ a.button:any-link, button {
   text-overflow: ellipsis;
   border-radius: 30px;
   position: relative;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
@@ -237,10 +237,6 @@ main .section.gray-highlight {
   background-color: var(--light-color);
 }
 
-main .section.highlight.carousel-container .default-content-wrapper {
-  text-align: center;
-}
-
 main .section.text-center {
   text-align: center;
 }
@@ -251,6 +247,10 @@ main .section.margin-top {
 
 main .section.cta-links {
   padding: 0;
+}
+
+main .section .default-content-wrapper .button-container {
+  text-align: center;
 }
 
 main .section.cta-links .default-content-wrapper {
