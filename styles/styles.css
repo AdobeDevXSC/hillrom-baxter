@@ -134,16 +134,17 @@ a:hover {
 /* buttons */
 a.button:any-link, button {
   font-family: var(--body-font-family);
+  font-size: 18px;
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid #000;
-  padding: 5px 30px;
+  border: 2px solid #154898;;
+  padding: 7px 50px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  color: #000;
+  color: #154898;;
   background-color: transparent;
   margin: 16px 0;
   white-space: nowrap;
@@ -151,11 +152,13 @@ a.button:any-link, button {
   text-overflow: ellipsis;
   border-radius: 30px;
   position: relative;
+  text-transform: uppercase;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: #154898;
   cursor: pointer;
+  color: #fff;
 }
 
 button:disabled, button:disabled:hover {
@@ -175,14 +178,14 @@ a.button:any-link::after {
   font-size: 22px;
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: 20px;
   transform: translate(-50%, -50%);
   transition: right 0.3s ease;
 }
 
 a.button:any-link:hover::after,
 button:hover::after {
-  right: 0px;
+  right: 10px;
 }
 
 main img {
@@ -229,6 +232,10 @@ main .section.gray-highlight {
   background-color: var(--light-color);
 }
 
+main .section.text-center {
+  text-align: center;
+}
+
 main .section.cta-links {
   padding: 0;
 }
@@ -258,11 +265,21 @@ main .section.cta-links .default-content-wrapper a {
   color: #fff;
   border: 2px solid #fff;
   margin: 0;
+  padding: 5px 30px;
+  text-transform: capitalize;
+}
+
+main .section.cta-links .default-content-wrapper a::after {
+  right: 10px;
 }
 
 main .section.cta-links .default-content-wrapper a:hover {
   color: #142063;
   background-color: #fff;
+}
+
+main .section.cta-links .default-content-wrapper a:hover::after {
+  right: 2px;
 }
 
 @media (width >= 900px) {
