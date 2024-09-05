@@ -19,7 +19,6 @@ export default async function decorate(block) {
   // Select all <a> elements within the footer
   const footerLinks = footer.querySelectorAll('a');
   footerLinks.forEach(link => {
-    // console.log("link: ", link);
     link.setAttribute('target', '_blank');
 
     const hasIcon = link.querySelector('img');
