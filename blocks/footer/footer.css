@@ -80,8 +80,9 @@ footer .footer .section:last-of-type .default-content-wrapper {
 footer .footer .section:last-of-type .default-content-wrapper p a {
   color: #fff;
   border-left: 1px solid #ccc;
-  padding: 0 15px;
+  padding: 0 20px;
   font-size: 16px;
+  display: inline-block;
 }
 
 footer .footer .section:last-of-type .default-content-wrapper p a:last-of-type {
