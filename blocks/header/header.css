@@ -413,6 +413,7 @@ header .top-nav > div:first-of-type .default-content-wrapper a {
 	border: none;
 	color: #fff;
 	border-radius: 0;
+	text-transform: none;
 }
 
 header .top-nav > div:first-of-type .default-content-wrapper a::after {
