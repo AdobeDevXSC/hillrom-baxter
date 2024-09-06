@@ -74,7 +74,7 @@ body.appear {
 }
 
 header {
-  /* height: var(--nav-height); */
+  min-height: 147px;
 }
 
 @media (width <= 768px) {
