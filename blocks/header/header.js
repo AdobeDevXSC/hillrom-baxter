@@ -187,6 +187,14 @@ export default async function decorate(block) {
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+
+      const navSectionTitle = navSection.childNodes[0].textContent.trim();
+
+      const navSectionList = navSection.querySelector('ul');
+      const li = document.createElement('li');
+      li.innerHTML = `<div>${navSectionTitle}</div>`;
+      navSectionList.prepend(li);
+
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
@@ -196,6 +204,15 @@ export default async function decorate(block) {
       });
     });
   }
+
+  // add event listener to close expanded nav sections
+  window.addEventListener('scroll', () => {
+    const expandedSections = Array.from(navSections.querySelectorAll('.default-content-wrapper > ul > li'))
+                                  .filter(section => section.getAttribute('aria-expanded') === 'true');
+    if (expandedSections.length > 0) {
+      expandedSections.forEach(section => section.setAttribute('aria-expanded', 'false'));
+    }
+  });
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
