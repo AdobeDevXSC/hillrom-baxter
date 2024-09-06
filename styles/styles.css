@@ -79,7 +79,7 @@ header {
 
 @media (width <= 768px) {
   header {
-   height: 191px;
+   min-height: 191px;
   }
 }
 
